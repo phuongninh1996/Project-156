@@ -43,14 +43,14 @@ public static void main(String args[]) {
 		address1.setZip(zipCode);
 		address1.setCountry(country);
 		String phoneNo = tokens[3];
-		String emailaddresses[]= (tokens[4].split(","));
-		Person person = new Person(personCode, address1, firstName, lastName, phoneNo); //Create constructor for Person Class
-		// Emailaddress
-		for (int emailLength = 0; emailLength< emailaddresses.length; emailLength++){
-			person.addEmail(emailaddresses[emailLength]);
-			}
+		Person person = new Person(personCode, address1, firstName, lastName, phoneNo);
+		if (tokens.length == 5 ){
+			String emailaddresses[] = (tokens[4].split(","));
+			for (int emailLength = 0; emailLength< emailaddresses.length; emailLength++){
+				person.addEmail(emailaddresses[emailLength]);
+				}
+		} 
 		peopleList.add(person);
-		//System.out.println(person.getEmails());
 
 		//Print out result
 		/*System.out.println (person.getPersonCode() + " " +
@@ -61,8 +61,8 @@ public static void main(String args[]) {
 							person.getAddress().getState() + " " +
 							person.getAddress().getZip() + " " +
 							person.getAddress().getCountry() + " " +
-							person.getPhoneNo());
-							*/
+							person.getPhoneNo() + " " + person.getEmails());*/
+							
 		
 		}
 	System.out.println(peopleList.get(0).getEmails()); 

@@ -3,22 +3,25 @@ package com.airamerica;
 /* A partial implementation of address of a particular
  * Location */
 public class Address {
-
+	
 	private String street;
 	private String city;
 	private String state;
 	private String zip;
 	private String country;
 
-	//TODO: Add more fields as needed
+//TODO: Add more fields as needed
 
 	/* Constructor - Generated using Eclipse Menu 
 	 * (Source-> Generate Constructor using fields) */
-
-	/*public Address(String street, String city) {
+	//Created a constructor
+	public Address(String street, String city, String state, String zip, String country) {
 		this.street = street;
 		this.city = city;
-		}*/
+		this.state = state;
+		this.zip = zip;
+		this.country = country;
+		}
 
 	/* Getters and Setters - Generated using Eclipse 
 	 * Menu (Source-> Generate Getters and Setters) */	
@@ -61,6 +64,6 @@ public class Address {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
+	
 	/* Additional methods as required */
 }

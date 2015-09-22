@@ -1,33 +1,30 @@
 package unl.cse.assignments;
 
-
 /* Phase-I */
 import com.airamerica.*;
-
-import java.io.File;
 import java.io.PrintWriter;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 
 // Include imports for XML/JSON libraries if needed
 import com.thoughtworks.xstream.XStream;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
+
 public class DataConverter {
 
 	public static void main(String args[]) {
+		loadFilePersons();
 
 		// TODO: Add your code to read data from .dat files, create objects
 		//and export them as XML or JSON 
-
-
-
-
+		
 
 		/*
 		 * Uncomment the following line to see an example of XML implementation
 		 * using XStream
 		 */
-		//		/XMLExample();
+//		/XMLExample();
 	}
 
 	/*
@@ -61,7 +58,6 @@ public class DataConverter {
 
 		System.out.println("XML generated at 'data/Person-example.xml'");
 	}*/
-	// Read file Person
 	public static void loadFilePersons(){
 		Scanner s= null;
 		try {
@@ -69,100 +65,52 @@ public class DataConverter {
 		} catch (FileNotFoundException e){
 			e.printStackTrace();
 		}
-
+		// Create Strings to hold PersonCode, firstName, lastName...
 		while(s.hasNext()){
 			String line= s.nextLine();
 			String tokens[]= line.split(";");
-			Person person= new Person();
-			person.setPersonCode(tokens[0]);
+			String personCode = tokens[0];
 			// Name
-
 			String name[]= tokens[1].split(",");
-			person.setLastName(name[0]);
-			person.setFirstName(name[1]); 
+			String firstName = name[0];
+			String lastName = name[1];
 			// Address
-			Address address = new Address();
-			String addressTokened[]= tokens[2].split(",");
-			address.setStreet(addressTokened[0]);
-			address.setCity(addressTokened[1]);
-			address.setState(addressTokened[2]);
-			address.setZip(addressTokened[3]);
-			address.setCountry(addressTokened[4]);
-
-			person.setPhoneNo(tokens[3]);
-			// Email address
-			String emailaddresses[]= (tokens[4].split(","));
+			String address[] = tokens[2].split(",");
+			String street = address[0];
+			String city = address[1];
+			String state = address[2];
+			String zipCode = address[3];
+			String country = address[4];
+			Address address1 = new Address(street,city,state,zipCode,country);//Creater constructor in Address class
+			address1.setStreet(street);										  //Add address to address class
+			address1.setCity(city);
+			address1.setState(state);
+			address1.setZip(zipCode);
+			address1.setCountry(country);
+			String phoneNo = tokens[3];
+			Person person = new Person(personCode, address1, firstName, lastName, phoneNo); //Create constructor for Person Class
+			person.setPersonCode(personCode);//Add information to Person class
+			person.setFirstName(firstName);
+			person.setLastName(lastName);
+			person.setAddress(address1);
+			person.setPhoneNo(phoneNo);
+			// Emailaddress
+			/*String emailaddresses[]= (tokens[4].split(","));
 			for (int emailLength = 0; emailLength< emailaddresses.length; emailLength++){
 				person.addEmail(emailaddresses[emailLength]);
+			}*/
+			//Print out result
+			System.out.println (person.getPersonCode() + " " +
+								person.getFirstName() + " " +
+								person.getLastName() + " " +
+								person.getAddress().getStreet() + " " +
+								person.getAddress().getCity() + " " +
+								person.getAddress().getState() + " " +
+								person.getAddress().getZip() + " " +
+								person.getAddress().getCountry() + " " +
+								person.getPhoneNo());
+			
 			}
 		}
-	}
-	// Read file Customers
-	public static void loadFileCustomer(){
-		Scanner s= null;
-		try {
-			s = new Scanner(new File("data/Persons.dat"));
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		}
-
-		while(s.hasNext()){
-			String line= s.nextLine();
-			String tokens[]= line.split(";");
-			
-			
-			
-			
-			
-		}
-	}
-
-	// Read file Invoices
-	public static void loadFileInvoices(){
-		Scanner s= null;
-		try {
-			s = new Scanner(new File("data/Persons.dat"));
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		}
-
-		while(s.hasNext()){
-			String line= s.nextLine();
-			String tokens[]= line.split(";");
-		}
-	}
-	
-	
-	// Read file Products
-	public static void loadFileProducts(){
-		Scanner s= null;
-		try {
-			s = new Scanner(new File("data/Persons.dat"));
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		}
-
-		while(s.hasNext()){
-			String line= s.nextLine();
-			String tokens[]= line.split(";");
-			
-		}
-	}
-	// Read Airports
-	public static void loadFileAirports(){
-		Scanner s= null;
-		try {
-			s = new Scanner(new File("data/Persons.dat"));
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		}
-
-		while(s.hasNext()){
-			String line= s.nextLine();
-			String tokens[]= line.split(";");
-		}
-	}
-
 }
-
-
+	

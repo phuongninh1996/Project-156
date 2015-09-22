@@ -69,7 +69,6 @@ public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNo = phoneNo;
-		this.emails = new ArrayList<String>(); 
 	}
 	
 	// TODO: Add Getters and setters as appropriate

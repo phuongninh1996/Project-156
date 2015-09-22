@@ -63,13 +63,13 @@ public class Person {
 	
 
 	// TODO: Add appropriate constructor(s) DONE!!!! creating constructor
-	public Person(String personCode, Address address, String firstName, String lastName, String phoneNo) {
+	public Person(String personCode, Address address, String firstName, String lastName, String phoneNo,List<String> emails) {
 		this.personCode = personCode;
 		this.address = address;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNo = phoneNo;
-		this.emails = new ArrayList<String>(); 
+		this.emails = emails;
 	}
 	
 	// TODO: Add Getters and setters as appropriate

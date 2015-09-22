@@ -118,11 +118,4 @@ public class DataConverter {
 			}
 		}
 }
-
-/*
- List<Taco> tacoList = new ArrayList<Taco>();
-for (int i = 0; i < MAX_TACOS; i++) {
-   tacoList.add(new Taco(i));
-}*/
-
 	

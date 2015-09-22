@@ -50,7 +50,7 @@ public static void main(String args[]) {
 			person.addEmail(emailaddresses[emailLength]);
 			}
 		peopleList.add(person);
-		//System.out.println(person.getEmails());
+		System.out.println(person.getEmails());
 
 		//Print out result
 		/*System.out.println (person.getPersonCode() + " " +

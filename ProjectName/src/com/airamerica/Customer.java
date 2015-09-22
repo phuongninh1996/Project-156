@@ -11,6 +11,10 @@ public class Customer {
 
 	/*TODO: Add other fields as necessary (eg. firstName, lastName,
 	phoneNo etc) */
+	private String type;
+	private String name;
+	private String airlineMiles;
+	
 	
 	// TODO: Add constructor(s)
 	

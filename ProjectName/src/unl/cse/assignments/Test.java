@@ -25,6 +25,7 @@ public static void main(String args[]) {
 			String line= s.nextLine();
 			String tokens[]= line.split(";");
 			person.setPersonCode(tokens[0]);
+			
 			// Name
 			
 			String name[]= tokens[1].split(",");
@@ -43,9 +44,9 @@ public static void main(String args[]) {
 			// Emailaddress
 			String emailaddresses[]= (tokens[4].split(","));
 			for (int emailLength = 0; emailLength< emailaddresses.length; emailLength++){
-				//emails = person.setEmails(person.addEmail(emailaddresses[emailLength])); //how this email can be set
+				emails = person.addEmail(emailaddresses[emailLength]); //how this email can be set
 			}
-			System.out.println(person.getLastName() );
+			System.out.println(person.getAddress().getStreet());
 		}
 	}
 }

@@ -6,16 +6,21 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 
 // Include imports for XML/JSON libraries if needed
 import com.thoughtworks.xstream.XStream;
 
 public class DataConverter {
+	ArrayList<Person> peopleList = new ArrayList<Person>();
+	ArrayList<Product> productList = new ArrayList<Product>();
+	ArrayList<Customer> customerList = new ArrayList<Customer>();
+	ArrayList<AirPort> airPortList = new ArrayList<AirPort>();
 
+	
 	public static void main(String args[]) {
-		loadFilePersons();
-
+			
 		// TODO: Add your code to read data from .dat files, create objects
 		//and export them as XML or JSON 
 		

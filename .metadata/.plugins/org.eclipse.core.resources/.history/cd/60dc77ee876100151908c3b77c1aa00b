@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 
 
-
-
 // Include imports for XML/JSON libraries if needed
 import com.thoughtworks.xstream.XStream;
 
@@ -131,53 +129,6 @@ public class DataConverter {
 	
 	
 	
-	
-	//Method to load AirPort Data
-	public static void loadFileAirport(){
-		Scanner s= null;
-		try {
-			s = new Scanner(new File("data/Persons.dat"));
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		}
-		// Create Strings to hold airportCode, name , address...
-		while(s.hasNext()){
-			String line= s.nextLine();
-			String tokens[]= line.split(";");
-			// airportCode
-			String airportCode = tokens[0];
-			//name
-			String name= tokens[1];
-			//Address
-			String address[] = tokens[2].split(",");
-			String street = address[0];
-			String city = address[1];
-			String state = address[2];
-			String zipCode = address[3];
-			String country = address[4];
-			Address address1 = new Address(street,city,state,zipCode,country);//Creater constructor in Address class
-			//Coordinates
-			String coordinatesArr[] = tokens[3].split(","); 
-			String latdges = coordinatesArr[0];
-			String latmins = coordinatesArr[1];
-			String londegs = coordinatesArr[2];
-			String lonmins = coordinatesArr[3];
-			Coordinates coordinates = new Coordinates( latdges,  latmins,  londegs,  lonmins);
-			
-			//passengerFacilityFee
-			String passengerFacilityFee = tokens[4];
-			AirPort airPort = new AirPort(airportCode, name, address1, coordinates, passengerFacilityFee);
-			
-					
-			// add all the airport into list of airport
-			airPortList.add(airPort);
-	}
-	}
-	
-	
-	
-	
-	
 	// Method to load file Customer
 	public static void loadFileCustomer(){
 		Scanner s= null;
@@ -215,60 +166,7 @@ public class DataConverter {
 	}
 	}
 	
-	
-	
-	
-	
-	
 	//Method to load Products
-	public static void loadFileProducts(){
-		Scanner s= null;
-		try {
-			s = new Scanner(new File("data/Persons.dat"));
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		}
-		// Create Strings to hold PersonCode, firstName, lastName...
-		while(s.hasNext()){
-			String line= s.nextLine();
-			String tokens[]= line.split(";");
-			// customerCode
-			String customerCode = tokens[0];
-			//type
-			String type= tokens[1];
-			//primaryContact
-			Person primaryContact = null;
-			for(int i=0; i< peopleList.size(); i++){
-				if( peopleList.get(i).getPersonCode().equals(tokens[2]));
-				primaryContact = peopleList.get(i);
-			}
-			//Name	
-			String name = tokens[3];
-			
-			//airlineMiles
-			String airlineMiles;
-			if(tokens.length == 5){
-			airlineMiles= tokens[4];}
-			else { airlineMiles = null;}
-			Customer customer = new Customer(customerCode ,primaryContact, type, name,airlineMiles );
-			
-			// add all the customers into list of customer
-			customerList.add(customer);
-	}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 	
 	

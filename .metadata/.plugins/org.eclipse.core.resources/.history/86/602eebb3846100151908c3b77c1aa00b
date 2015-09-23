@@ -17,7 +17,7 @@ public class Customer {
 	
 	
 	// TODO: Add constructor(s)
-	public Customer (String customerCode, Person primaryContact, String type, String name, String airlineMiles ){
+	public Customer (Person primaryContact, String type, String name, String airlineMiles ){
 		this.type = type;
 		this.name = name;
 		this.airlineMiles = airlineMiles;

@@ -3,11 +3,11 @@ package com.airamerica;
 public class AirPort {
 	private String airportCode;
 	private String name;
-	private Address address;
-	private Coordinates coordinates;
+	private String address;
+	private String coordinates;
 	private String passengerFacilityFee;
 	
-	public AirPort(String airportCode, String name, Address address, Coordinates coordinates, String passengerFacilityFee){
+	public AirPort(String airportCode, String name, String address, String coordinates, String passengerFacilityFee){
 		this.airportCode = airportCode;
 		this.name = name;
 		this.address = address;

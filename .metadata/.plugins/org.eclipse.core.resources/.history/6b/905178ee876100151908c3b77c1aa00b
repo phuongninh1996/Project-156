@@ -39,6 +39,11 @@ public static void main(String args[]) {
 		String zipCode = address[3];
 		String country = address[4];
 		Address address1 = new Address(street,city,state,zipCode,country);//Creater constructor in Address class
+		address1.setStreet(street);										  //Add address to address class
+		address1.setCity(city);
+		address1.setState(state);
+		address1.setZip(zipCode);
+		address1.setCountry(country);
 		String phoneNo = tokens[3];
 		Person person = new Person(personCode, address1, firstName, lastName, phoneNo);
 		if (tokens.length == 5 ){
@@ -52,7 +57,7 @@ public static void main(String args[]) {
 		
 
 		//Print out result
-		System.out.println (person.getPersonCode() + " " +
+		/*System.out.println (person.getPersonCode() + " " +
 							person.getFirstName() + " " +
 							person.getLastName() + " " +
 							person.getAddress().getStreet() + " " +
@@ -60,11 +65,11 @@ public static void main(String args[]) {
 							person.getAddress().getState() + " " +
 							person.getAddress().getZip() + " " +
 							person.getAddress().getCountry() + " " +
-							person.getPhoneNo() + " " + person.getEmails());
+							person.getPhoneNo() + " " + person.getEmails());*/
 							
 		
 		}
 	//System.out.println(peopleList.get(0).getEmails()); 
-	//System.out.println(person1.getFirstName());
+	System.out.println(person1.getFirstName());
 	}
 }

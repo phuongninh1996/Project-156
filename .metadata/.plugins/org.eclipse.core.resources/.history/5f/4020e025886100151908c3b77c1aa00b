@@ -60,7 +60,7 @@ public static void main(String args[]) {
 							person.getAddress().getState() + " " +
 							person.getAddress().getZip() + " " +
 							person.getAddress().getCountry() + " " +
-							person.getPhoneNo() + " " + person.getEmails());
+							person.getPhoneNo() + " " + person.getEmails());*/
 							
 		
 		}

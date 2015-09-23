@@ -5,8 +5,8 @@ import org.joda.time.DateTime;
 public class AwardTickets extends ProductTypes {
 	private AirPort depAirportCode; 
 	private AirPort arrAirportCode;
-	private DateTime depTime;
-	private DateTime arrTime;
+	private String depTime;
+	private String arrTime;
 	private String flightNo;
 	private String flightClass;
 	private String aircraftType;
@@ -30,19 +30,19 @@ public class AwardTickets extends ProductTypes {
 		this.arrAirportCode = arrAirportCode;
 	}
 
-	public DateTime getDepTime() {
+	public String getDepTime() {
 		return depTime;
 	}
 
-	public void setDepTime(DateTime depTime) {
+	public void setDepTime(String depTime) {
 		this.depTime = depTime;
 	}
 
-	public DateTime getArrTime() {
+	public String getArrTime() {
 		return arrTime;
 	}
 
-	public void setArrTime(DateTime arrTime) {
+	public void setArrTime(String arrTime) {
 		this.arrTime = arrTime;
 	}
 
@@ -78,7 +78,7 @@ public class AwardTickets extends ProductTypes {
 		this.pointsPerMile = pointsPerMile;
 	}
 
-	public AwardTickets(String code, String type, AirPort depAirportCode, AirPort arrAirportCode,DateTime depTime,DateTime arrTime,String flightNo,String flightClass,String aircraftType, String pointsPerMile){
+	public AwardTickets(String code, String type, AirPort depAirportCode, AirPort arrAirportCode,String depTime,String arrTime,String flightNo,String flightClass,String aircraftType, String pointsPerMile){
 		setProductCode(code);
 		setType(type);
 		this.depAirportCode = depAirportCode;

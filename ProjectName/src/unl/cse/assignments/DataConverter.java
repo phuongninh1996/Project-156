@@ -23,6 +23,7 @@ import java.util.ArrayList;
 
 
 
+
 // Include imports for XML/JSON libraries if needed
 import com.thoughtworks.xstream.XStream;
 public class DataConverter {
@@ -232,11 +233,13 @@ public class DataConverter {
 	public static void loadFileProducts(){
 		Scanner s= null;
 		try {
-			s = new Scanner(new File("data/Persons.dat"));
+			s = new Scanner(new File("data/Products.dat"));
 		} catch (FileNotFoundException e){
 			e.printStackTrace();
 		}
 		// Create Strings to hold PersonCode, firstName, lastName...
+		AirPort depAirportCode=null;
+		AirPort arrAirportCode=null;
 		while(s.hasNext()){
 			String line= s.nextLine();
 			String tokens[]= line.split(";");
@@ -244,13 +247,13 @@ public class DataConverter {
 			String productCode = tokens[0];
 			//type
 			String type= tokens[1];
+			System.out.println(type);
+
 			//declare all the variables
-			DateTime seasonStartDate;
-			DateTime seasonEndDate;
-			AirPort depAirportCode= null;
-			AirPort arrAirportCode= null;
-			DateTime depTime;
-			DateTime arrTime;
+			String seasonStartDate;
+			String seasonEndDate;
+			String depTime;
+			String arrTime;
 			String flightNo;
 			String flightClass;
 			String aircraftType;
@@ -261,15 +264,21 @@ public class DataConverter {
 			if(type.equals("TS")){
 				for(int i=0; i< airPortList.size(); i++){
 					if( airPortList.get(i).getAirportCode().equals(tokens[2])){
+						//System.out.println("hello");
+
 						depAirportCode = airPortList.get(i);
 					}
 
-					if( airPortList.get(i).getAirportCode().equals(tokens[3])){
-						arrAirportCode= airPortList.get(i);}
+					else if( airPortList.get(i).getAirportCode().equals(tokens[3])){
+						arrAirportCode= airPortList.get(i);
+						//System.out.println(arrAirportCode);
+					}
 
 				}
-				depTime= DateTime.parse(tokens[4]);
-				arrTime=DateTime.parse(tokens[5]);
+				System.out.println(arrAirportCode);
+
+				depTime= tokens[4];
+				arrTime=tokens[5];
 				flightNo= tokens[6];
 				flightClass= tokens[7];
 				aircraftType=tokens[8]; 				
@@ -280,8 +289,8 @@ public class DataConverter {
 			}
 			//Off season Ticket
 			else if(type.equals("TO")){
-				seasonStartDate = DateTime.parse(tokens[2]);
-				seasonEndDate= DateTime.parse(tokens[3]);
+				seasonStartDate = tokens[2];
+				seasonEndDate= tokens[3];
 				for(int i=0; i< airPortList.size(); i++){
 					if( airPortList.get(i).getAirportCode().equals(tokens[4])){
 						depAirportCode = airPortList.get(i);
@@ -291,14 +300,15 @@ public class DataConverter {
 						arrAirportCode= airPortList.get(i);}
 
 				}
-				depTime= DateTime.parse(tokens[6]);
-				arrTime=DateTime.parse(tokens[7]);
+				depTime= tokens[6];
+				arrTime=tokens[7];
 				flightNo= tokens[8];
 				flightClass= tokens[9];
 				aircraftType=tokens[10]; 
 				rebate=tokens[11];
 				Product offSeasonTickets =  new OffSeasonTickets( productCode, type, seasonStartDate, seasonEndDate,  depAirportCode,  arrAirportCode,  depTime,
 						arrTime,flightNo,flightClass,aircraftType, rebate );
+				productList.add(offSeasonTickets);
 
 			}
 			//Award ticket
@@ -312,8 +322,8 @@ public class DataConverter {
 						arrAirportCode= airPortList.get(i);}
 
 				}
-				depTime= DateTime.parse(tokens[4]);
-				arrTime=DateTime.parse(tokens[5]);
+				depTime= tokens[4];
+				arrTime=tokens[5];
 				flightNo= tokens[6];
 				flightClass= tokens[7];
 				aircraftType=tokens[8]; 
@@ -356,10 +366,76 @@ public class DataConverter {
 
 			}
 
+		}
+
+
+		XStream xstream = new XStream();
+		PrintWriter pw = null;
+		try {
+			pw = new PrintWriter(new File("data/Product-example.xml"));
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		System.out.println(productList.size());
+		for(int i=0; i<productList.size(); i++){
+			xstream.alias("product", Product.class);
+			pw.print("<product>\n");
+			pw.print(xstream.toXML(productList.get(i)) + "\n");
+			pw.print("</product>" + "\n");
+
+			/*if (productList.get(i).getType().equals("TS")){
+				xstream.alias("product", StandardTickets.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)) + "\n");
+				pw.print("</product>" + "\n");
+			}
+			else if (productList.get(i).getType().equals("TO")){
+				xstream.alias("product", OffSeasonTickets.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)) + "\n");
+				pw.print("</product>" + "\n");
+			}
+			else if (productList.get(i).getType().equals("TA")){
+				xstream.alias("product", AwardTickets.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)) + "\n");
+				pw.print("</product>" + "\n");
+			}
+			else if (productList.get(i).getType().equals("SC")){
+				xstream.alias("product", CheckedBagage.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)) + "\n");
+				pw.print("</product>" + "\n");
+			}
+			else if (productList.get(i).getType().equals("SI")){
+				xstream.alias("product", Insurance.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)));
+				pw.print("</product>" + "\n");
+			}
+			else if (productList.get(i).getType().equals("SS")){
+				xstream.alias("product", SpecialAssistance.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)) + "\n");
+				pw.print("</product>" + "\n");
+			}
+			else if (productList.get(i).getType().equals("SR")){
+				xstream.alias("product", Refreshment.class);
+				pw.print("<product>\n");
+				pw.print(xstream.toXML(productList.get(i)) + "\n");
+				pw.print("</product>" + "\n");
+			}*/
 
 		}
+		pw.close();
+
+
 	}
 
+}
 
+
+}
+}
 }
 

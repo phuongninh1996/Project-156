@@ -3,19 +3,19 @@ package com.airamerica;
 import org.joda.time.DateTime;
 
 public class OffSeasonTickets extends ProductTypes{
-	private DateTime seasonStartDate;
-	private DateTime seasonEndDate;
+	private String seasonStartDate;
+	private String seasonEndDate;
 	private AirPort depAirportCode; 
 	private AirPort arrAirportCode;
-	private DateTime depTime;
-	private DateTime arrTime;
+	private String depTime;
+	private String arrTime;
 	private String flightNo;
 	private String flightClass;
 	private String aircraftType;
 	private String rebate; 
 	
-	public OffSeasonTickets(String code, String type, DateTime seasonStartDate, DateTime seasonEndDate, AirPort depAirportCode, AirPort arrAirportCode, DateTime depTime,
-	DateTime arrTime,
+	public OffSeasonTickets(String code, String type, String seasonStartDate, String seasonEndDate, AirPort depAirportCode, AirPort arrAirportCode, String depTime,
+	String arrTime,
 	String flightNo,
 	String flightClass,
 	String aircraftType,
@@ -36,21 +36,6 @@ public class OffSeasonTickets extends ProductTypes{
 		
 	}
 
-	public DateTime getSeasonStartDate() {
-		return seasonStartDate;
-	}
-
-	public void setSeasonStartDate(DateTime seasonStartDate) {
-		this.seasonStartDate = seasonStartDate;
-	}
-
-	public DateTime getSeasonEndDate() {
-		return seasonEndDate;
-	}
-
-	public void setSeasonEndDate(DateTime seasonEndDate) {
-		this.seasonEndDate = seasonEndDate;
-	}
 
 	public AirPort getDepAirportCode() {
 		return depAirportCode;
@@ -68,21 +53,46 @@ public class OffSeasonTickets extends ProductTypes{
 		this.arrAirportCode = arrAirportCode;
 	}
 
-	public DateTime getDepTime() {
+
+	public String getSeasonStartDate() {
+		return seasonStartDate;
+	}
+
+
+	public void setSeasonStartDate(String seasonStartDate) {
+		this.seasonStartDate = seasonStartDate;
+	}
+
+
+	public String getSeasonEndDate() {
+		return seasonEndDate;
+	}
+
+
+	public void setSeasonEndDate(String seasonEndDate) {
+		this.seasonEndDate = seasonEndDate;
+	}
+
+
+	public String getDepTime() {
 		return depTime;
 	}
 
-	public void setDepTime(DateTime depTime) {
+
+	public void setDepTime(String depTime) {
 		this.depTime = depTime;
 	}
 
-	public DateTime getArrTime() {
+
+	public String getArrTime() {
 		return arrTime;
 	}
 
-	public void setArrTime(DateTime arrTime) {
+
+	public void setArrTime(String arrTime) {
 		this.arrTime = arrTime;
 	}
+
 
 	public String getFlightNo() {
 		return flightNo;

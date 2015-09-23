@@ -1,0 +1,246 @@
+<product>
+<com.airamerica.Insurance>
+  <productCode>ff23</productCode>
+  <type>SI</type>
+  <name>NationalInsurance</name>
+  <ageClass>0-20</ageClass>
+  <costPerMile>0.07</costPerMile>
+</com.airamerica.Insurance>
+</product>
+<product>
+<com.airamerica.StandardTickets>
+  <productCode>1255</productCode>
+  <type>TS</type>
+  <depTime>09:30</depTime>
+  <arrTime>15:55</arrTime>
+  <flightNo>NA2222</flightNo>
+  <flightClass>BC</flightClass>
+  <aircraftType>Boeing757</aircraftType>
+</com.airamerica.StandardTickets>
+</product>
+<product>
+<com.airamerica.CheckedBagage>
+  <productCode>90fa</productCode>
+  <type>SC</type>
+</com.airamerica.CheckedBagage>
+</product>
+<product>
+<com.airamerica.StandardTickets>
+  <productCode>1238</productCode>
+  <type>TS</type>
+  <depTime>06:00</depTime>
+  <arrTime>9:08</arrTime>
+  <flightNo>NA4889</flightNo>
+  <flightClass>EC</flightClass>
+  <aircraftType>CRJ900</aircraftType>
+</com.airamerica.StandardTickets>
+</product>
+<product>
+<com.airamerica.SpecialAssistance>
+  <productCode>xer2</productCode>
+  <type>SS</type>
+  <typeofService>WheelChair</typeofService>
+</com.airamerica.SpecialAssistance>
+</product>
+<product>
+<com.airamerica.OffSeasonTickets>
+  <productCode>1240</productCode>
+  <type>TO</type>
+  <seasonStartDate>2015-10-07</seasonStartDate>
+  <seasonEndDate>2016-01-29</seasonEndDate>
+  <depTime>06:00</depTime>
+  <arrTime>9:08</arrTime>
+  <flightNo>NA4889</flightNo>
+  <flightClass>EC</flightClass>
+  <aircraftType>CRJ900</aircraftType>
+  <rebate>0.1</rebate>
+</com.airamerica.OffSeasonTickets>
+</product>
+<product>
+<com.airamerica.StandardTickets>
+  <productCode>1241</productCode>
+  <type>TS</type>
+  <depTime>21:15</depTime>
+  <arrTime>22:42</arrTime>
+  <flightNo>NA4871</flightNo>
+  <flightClass>EC</flightClass>
+  <aircraftType>CRJ900</aircraftType>
+</com.airamerica.StandardTickets>
+</product>
+<product>
+<com.airamerica.Insurance>
+  <productCode>ff25</productCode>
+  <type>SI</type>
+  <name>Progressive</name>
+  <ageClass>69-102</ageClass>
+  <costPerMile>0.1</costPerMile>
+</com.airamerica.Insurance>
+</product>
+<product>
+<com.airamerica.OffSeasonTickets>
+  <productCode>1243</productCode>
+  <type>TO</type>
+  <seasonStartDate>2015-10-07</seasonStartDate>
+  <seasonEndDate>2016-01-29</seasonEndDate>
+  <depTime>21:15</depTime>
+  <arrTime>22:42</arrTime>
+  <flightNo>NA4871</flightNo>
+  <flightClass>EP</flightClass>
+  <aircraftType>CRJ900</aircraftType>
+  <rebate>0.2</rebate>
+</com.airamerica.OffSeasonTickets>
+</product>
+<product>
+<com.airamerica.CheckedBagage>
+  <productCode>90fb</productCode>
+  <type>SC</type>
+</com.airamerica.CheckedBagage>
+</product>
+<product>
+<com.airamerica.StandardTickets>
+  <productCode>1256</productCode>
+  <type>TS</type>
+  <depTime>09:30</depTime>
+  <arrTime>15:55</arrTime>
+  <flightNo>NA2222</flightNo>
+  <flightClass>EP</flightClass>
+  <aircraftType>Boeing757</aircraftType>
+</com.airamerica.StandardTickets>
+</product>
+<product>
+<com.airamerica.AwardTickets>
+  <productCode>1257</productCode>
+  <type>TA</type>
+  <depTime>10:15</depTime>
+  <arrTime>18:13</arrTime>
+  <flightNo>NA101</flightNo>
+  <flightClass>EP</flightClass>
+  <aircraftType>Boeing737-900ER</aircraftType>
+  <pointsPerMile>90</pointsPerMile>
+</com.airamerica.AwardTickets>
+</product>
+<product>
+<com.airamerica.StandardTickets>
+  <productCode>1258</productCode>
+  <type>TS</type>
+  <depTime>10:50</depTime>
+  <arrTime>12:50</arrTime>
+  <flightNo>NA1555</flightNo>
+  <flightClass>EC</flightClass>
+  <aircraftType>Boeing737-900ER</aircraftType>
+</com.airamerica.StandardTickets>
+</product>
+<product>
+<com.airamerica.Refreshment>
+  <productCode>32f4</productCode>
+  <type>SR</type>
+  <name>Italian Buffet</name>
+  <cost>18.00</cost>
+</com.airamerica.Refreshment>
+</product>
+<product>
+<com.airamerica.AwardTickets>
+  <productCode>1260</productCode>
+  <type>TA</type>
+  <depTime>09:09</depTime>
+  <arrTime>11:06</arrTime>
+  <flightNo>N725</flightNo>
+  <flightClass>EP</flightClass>
+  <aircraftType>Airbus-A319</aircraftType>
+  <pointsPerMile>110</pointsPerMile>
+</com.airamerica.AwardTickets>
+</product>
+<product>
+<com.airamerica.SpecialAssistance>
+  <productCode>xer4</productCode>
+  <type>SS</type>
+  <typeofService>BabyBassinet</typeofService>
+</com.airamerica.SpecialAssistance>
+</product>
+<product>
+<com.airamerica.StandardTickets>
+  <productCode>1261</productCode>
+  <type>TS</type>
+  <depTime>09:09</depTime>
+  <arrTime>11:06</arrTime>
+  <flightNo>N725</flightNo>
+  <flightClass>BC</flightClass>
+  <aircraftType>Airbus-A319</aircraftType>
+</com.airamerica.StandardTickets>
+</product>
+<product>
+<com.airamerica.Insurance>
+  <productCode>ff24</productCode>
+  <type>SI</type>
+  <name>Progressive</name>
+  <ageClass>55-68</ageClass>
+  <costPerMile>0.09</costPerMile>
+</com.airamerica.Insurance>
+</product>
+<product>
+<com.airamerica.OffSeasonTickets>
+  <productCode>1262</productCode>
+  <type>TO</type>
+  <seasonStartDate>2015-09-01</seasonStartDate>
+  <seasonEndDate>2016-10-12</seasonEndDate>
+  <depTime>14:24</depTime>
+  <arrTime>19:56</arrTime>
+  <flightNo>N2000</flightNo>
+  <flightClass>BC</flightClass>
+  <aircraftType>Airbus-A320</aircraftType>
+  <rebate>0.15</rebate>
+</com.airamerica.OffSeasonTickets>
+</product>
+<product>
+<com.airamerica.OffSeasonTickets>
+  <productCode>1263</productCode>
+  <type>TO</type>
+  <seasonStartDate>2015-09-15</seasonStartDate>
+  <seasonEndDate>2016-12-29</seasonEndDate>
+  <depTime>07:10</depTime>
+  <arrTime>12:42</arrTime>
+  <flightNo>N488</flightNo>
+  <flightClass>EC</flightClass>
+  <aircraftType>Airbus-A320</aircraftType>
+  <rebate>0.25</rebate>
+</com.airamerica.OffSeasonTickets>
+</product>
+<product>
+<com.airamerica.Insurance>
+  <productCode>fg23</productCode>
+  <type>SI</type>
+  <name>Progressive</name>
+  <ageClass>21-54</ageClass>
+  <costPerMile>0.08</costPerMile>
+</com.airamerica.Insurance>
+</product>
+<product>
+<com.airamerica.Insurance>
+  <productCode>fh23</productCode>
+  <type>SI</type>
+  <name>NationalInsurance</name>
+  <ageClass>21-60</ageClass>
+  <costPerMile>0.085</costPerMile>
+</com.airamerica.Insurance>
+</product>
+<product>
+<com.airamerica.CheckedBagage>
+  <productCode>90fc</productCode>
+  <type>SC</type>
+</com.airamerica.CheckedBagage>
+</product>
+<product>
+<com.airamerica.SpecialAssistance>
+  <productCode>xer1</productCode>
+  <type>SS</type>
+  <typeofService>PrioritySeating</typeofService>
+</com.airamerica.SpecialAssistance>
+</product>
+<product>
+<com.airamerica.Refreshment>
+  <productCode>31f4</productCode>
+  <type>SR</type>
+  <name>Labbat-Beer-15oz</name>
+  <cost>04.50</cost>
+</com.airamerica.Refreshment>
+</product>

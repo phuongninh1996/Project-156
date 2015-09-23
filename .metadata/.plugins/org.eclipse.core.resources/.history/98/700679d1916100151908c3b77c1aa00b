@@ -7,10 +7,6 @@ public class OffSeasonTickets extends ProductTypes{
 	private String arrAirportCode;
 	private String depTime;
 	private String arrTime;
-	private String fightNo;
-	private String flightClass;
-	private String aircraftType;
-	private String rebate; 
-	
+	private fightNo
 }
 

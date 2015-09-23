@@ -1049,3 +1049,33 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 13:51:07.583
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.ltk.core.refactoring 2 4 2015-09-23 13:53:00.108
+!MESSAGE Must specify a URI scheme:PARENT-6-PROJECT_LOC/joda-time-2.0.jar
+
+!ENTRY org.eclipse.ltk.core.refactoring 2 4 2015-09-23 13:53:19.511
+!MESSAGE Must specify a URI scheme:PARENT-6-PROJECT_LOC/joda-time-2.0.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:03:47.429
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:03:47.429
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:03:47.430
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:03:47.430
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:03:47.430
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:03:47.430
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-09-23 14:09:47.323
+!MESSAGE Invalid ZIP archive: lib/joda-time-2.0.jar [in ProjectName]

@@ -1,0 +1,89 @@
+package com.airamerica;
+
+public class AwardTickets extends ProductTypes {
+	private String depAirportCode; 
+	private String arrAirportCode;
+	private String depTime;
+	private String arrTime;
+	private String flightNo;
+	private String flightClass;
+	private String aircraftType;
+	private String pointsPerMile;
+
+	public String getDepAirportCode() {
+		return depAirportCode;
+	}
+
+	public void setDepAirportCode(String depAirportCode) {
+		this.depAirportCode = depAirportCode;
+	}
+
+	public String getArrAirportCode() {
+		return arrAirportCode;
+	}
+
+	public void setArrAirportCode(String arrAirportCode) {
+		this.arrAirportCode = arrAirportCode;
+	}
+
+	public String getDepTime() {
+		return depTime;
+	}
+
+	public void setDepTime(String depTime) {
+		this.depTime = depTime;
+	}
+
+	public String getArrTime() {
+		return arrTime;
+	}
+
+	public void setArrTime(String arrTime) {
+		this.arrTime = arrTime;
+	}
+
+	public String getFlightNo() {
+		return flightNo;
+	}
+
+	public void setFlightNo(String flightNo) {
+		this.flightNo = flightNo;
+	}
+
+	public String getFlightClass() {
+		return flightClass;
+	}
+
+	public void setFlightClass(String flightClass) {
+		this.flightClass = flightClass;
+	}
+
+	public String getAircraftType() {
+		return aircraftType;
+	}
+
+	public void setAircraftType(String aircraftType) {
+		this.aircraftType = aircraftType;
+	}
+
+	public String getPointsPerMile() {
+		return pointsPerMile;
+	}
+
+	public void setPointsPerMile(String pointsPerMile) {
+		this.pointsPerMile = pointsPerMile;
+	}
+
+	public AwardTickets(String code, String type, String depAirportCode, String arrAirportCode,String depTime,String arrTime,String flightNo,String flightClass,String aircraftType, String pointsPerMile){
+		setProductCode(code);
+		setType(type);
+		this.depAirportCode = depAirportCode;
+		this.arrAirportCode = arrAirportCode; 
+		this.depTime= depTime;
+		this.arrTime = arrTime;
+		this.flightNo= flightNo;
+		this.flightClass = flightClass;
+		this.aircraftType = aircraftType;
+		this.pointsPerMile = pointsPerMile;
+	}
+}

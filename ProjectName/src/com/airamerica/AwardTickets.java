@@ -1,44 +1,48 @@
 package com.airamerica;
 
+import org.joda.time.DateTime;
+
 public class AwardTickets extends ProductTypes {
-	private String depAirportCode; 
-	private String arrAirportCode;
-	private String depTime;
-	private String arrTime;
+	private AirPort depAirportCode; 
+	private AirPort arrAirportCode;
+	private DateTime depTime;
+	private DateTime arrTime;
 	private String flightNo;
 	private String flightClass;
 	private String aircraftType;
 	private String pointsPerMile;
 
-	public String getDepAirportCode() {
+
+
+	public AirPort getDepAirportCode() {
 		return depAirportCode;
 	}
 
-	public void setDepAirportCode(String depAirportCode) {
+	public void setDepAirportCode(AirPort depAirportCode) {
 		this.depAirportCode = depAirportCode;
 	}
 
-	public String getArrAirportCode() {
+	public AirPort getArrAirportCode() {
 		return arrAirportCode;
 	}
 
-	public void setArrAirportCode(String arrAirportCode) {
+	public void setArrAirportCode(AirPort arrAirportCode) {
 		this.arrAirportCode = arrAirportCode;
 	}
 
-	public String getDepTime() {
+	public DateTime getDepTime() {
 		return depTime;
 	}
 
-	public void setDepTime(String depTime) {
+	public void setDepTime(DateTime depTime) {
 		this.depTime = depTime;
 	}
 
-	public String getArrTime() {
+	public DateTime getArrTime() {
 		return arrTime;
 	}
 
-	public void setArrTime(String arrTime) {
+	public void setArrTime(DateTime arrTime) {
 		this.arrTime = arrTime;
 	}
 
@@ -74,7 +78,9 @@ public class AwardTickets extends ProductTypes {
 		this.pointsPerMile = pointsPerMile;
 	}
 
-	public AwardTickets(String depAirportCode, String arrAirportCode,String depTime,String arrTime,String flightNo,String flightClass,String aircraftType, String pointsPerMile){
+	public AwardTickets(String code, String type, AirPort depAirportCode, AirPort arrAirportCode,DateTime depTime,DateTime arrTime,String flightNo,String flightClass,String aircraftType, String pointsPerMile){
+		setProductCode(code);
+		setType(type);
 		this.depAirportCode = depAirportCode;
 		this.arrAirportCode = arrAirportCode; 
 		this.depTime= depTime;

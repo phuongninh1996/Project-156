@@ -1,40 +1,60 @@
 package com.airamerica;
 
 public class Coordinates {
-	private String latdges;
-	private String latmins;
-	private String londegs;
-	private String lonmins;
+	private double latdges;
+	private double latmins;
+	private double londegs;
+	private double lonmins;
 	
-	public Coordinates(String latdges, String latmins, String londegs, String lonmins){
+	
+	public Coordinates(double latdges, double latmins, double londegs, double lonmins){
 		this.latdges = latdges;
 		this.latmins = latmins;
 		this.londegs = londegs;
 		this.lonmins = lonmins;
 	}
-	public String getLatdges() {
+	
+	public double latitudeCalculate(){
+		double latitude =  latdges+ (latmins/60);  
+		return latitude;
+
+	}
+	public double longtitudeCalculate(){
+		double longtitude = londegs+ (lonmins/60);
+		return longtitude;
+		
+	}
+
+	public double getLatdges() {
 		return latdges;
 	}
-	public void setLatdges(String latdges) {
+
+	public void setLatdges(double latdges) {
 		this.latdges = latdges;
 	}
-	public String getLatmins() {
+
+	public double getLatmins() {
 		return latmins;
 	}
-	public void setLatmins(String latmins) {
+
+	public void setLatmins(double latmins) {
 		this.latmins = latmins;
 	}
-	public String getLondegs() {
+
+	public double getLondegs() {
 		return londegs;
 	}
-	public void setLondegs(String londegs) {
+
+	public void setLondegs(double londegs) {
 		this.londegs = londegs;
 	}
-	public String getLonmins() {
+
+	public double getLonmins() {
 		return lonmins;
 	}
-	public void setLonmins(String lonmins) {
+
+	public void setLonmins(double lonmins) {
 		this.lonmins = lonmins;
 	}
-	
+
 }

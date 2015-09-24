@@ -17,13 +17,53 @@ public class Customer {
 	
 	
 	// TODO: Add constructor(s)
-	public Customer (String customerCode, Person primaryContact, String type, String name, String airlineMiles ){
+
+	
+	public String getCustomerCode() {
+		return customerCode;
+	}
+
+	public Customer(String customerCode, Person primaryContact, String type,
+			String name, String airlineMiles) {
+		this.customerCode = customerCode;
+		this.primaryContact = primaryContact;
 		this.type = type;
 		this.name = name;
 		this.airlineMiles = airlineMiles;
-		this.primaryContact= primaryContact;
 	}
-	
+
+	public void setCustomerCode(String customerCode) {
+		this.customerCode = customerCode;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAirlineMiles() {
+		return airlineMiles;
+	}
+
+	public void setAirlineMiles(String airlineMiles) {
+		this.airlineMiles = airlineMiles;
+	}
+
+	public void setPrimaryContact(Person primaryContact) {
+		this.primaryContact = primaryContact;
+	}
+
 	/*TODO: Add Getters and setters */
 	public Person getPrimaryContact() {
 		return primaryContact;

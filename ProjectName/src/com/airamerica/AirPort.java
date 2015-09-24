@@ -2,15 +2,15 @@ package com.airamerica;
 
 public class AirPort {
 	private String airportCode;
-	private String name;
+	private String airportName;
 	private Address address;
 	private double latitude;
 	private double longtitude;
 	private String passengerFacilityFee;
 	
-	public AirPort(String airportCode, String name, Address address, double latitude, double longtitude, String passengerFacilityFee){
+	public AirPort(String airportCode, String airportName, Address address, double latitude, double longtitude, String passengerFacilityFee){
 		this.airportCode = airportCode;
-		this.name = name;
+		this.airportName = airportName;
 		this.address = address;
 		this.latitude= latitude;
 		this.longtitude=longtitude;
@@ -27,11 +27,11 @@ public class AirPort {
 	}
 
 	public String getName() {
-		return name;
+		return airportName;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.airportName = name;
 	}
 
 	public Address getAddress() {

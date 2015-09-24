@@ -37,46 +37,12 @@ public class DataConverter {
 
 		// TODO: Add your code to read data from .dat files, create objects
 		//and export them as XML or JSON 
-
-
-		/*
-		 * Uncomment the following line to see an example of XML implementation
-		 * using XStream
-		 */
-		//		/XMLExample();
+		loadFilePersons();
+		loadFileAirport();
+		loadFileCustomer();
+		loadFileProducts();
 	}
 
-	/*
-	 * An example of using XStream API It exports to "data/Person-example.xml"
-	 * NOTE: It may be interesting to note how compositions (and relationships
-	 * are exported. NOTE: Pay attention how to alias various properties of an
-	 * object.
-	 */
-	/*public static void XMLExample() {
-		XStream xstream = new XStream();
-
-		Address address1 = new Address("Street1", "City1");
-		Person p1 = new Person("PersonCode1", address1);
-		p1.addEmail("Email1");
-		p1.addEmail("Email2");
-		Person p2 = new Person("PersonCode2", address1);
-		p2.addEmail("Email3");
-		p2.addEmail("Email4");
-		xstream.alias("person", Person.class);
-		PrintWriter pw = null;
-		try {
-			pw = new PrintWriter(new File("data/Person-example.xml"));
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		pw.print("<persons>\n");
-		pw.print(xstream.toXML(p1) + "\n");
-		pw.print(xstream.toXML(p2) + "\n");
-		pw.print("</persons>" + "\n");
-		pw.close();
-
-		System.out.println("XML generated at 'data/Person-example.xml'");
-	}*/
 
 
 
@@ -104,7 +70,7 @@ public class DataConverter {
 			String state = address[2];
 			String zipCode = address[3];
 			String country = address[4];
-			Address address1 = new Address(street,city,state,zipCode,country);//Creater constructor in Address class
+			Address address1 = new Address(street,city,state,zipCode,country);//Create constructor in Address class
 			address1.setStreet(street);										  //Add address to address class
 			address1.setCity(city);
 			address1.setState(state);
@@ -121,20 +87,7 @@ public class DataConverter {
 			peopleList.add(person);
 
 
-			//Print out result
-			/*System.out.println (person.getPersonCode() + " " +
-								person.getFirstName() + " " +
-								person.getLastName() + " " +
-								person.getAddress().getStreet() + " " +
-								person.getAddress().getCity() + " " +
-								person.getAddress().getState() + " " +
-								person.getAddress().getZip() + " " +
-								person.getAddress().getCountry() + " " +
-								person.getPhoneNo() + " " + person.getEmails());*/
-
-
 		}
-		System.out.println(peopleList.get(0).getEmails()); 
 	}
 
 
@@ -144,7 +97,7 @@ public class DataConverter {
 	public static void loadFileAirport(){
 		Scanner s= null;
 		try {
-			s = new Scanner(new File("data/Persons.dat"));
+			s = new Scanner(new File("data/Airports.dat"));
 		} catch (FileNotFoundException e){
 			e.printStackTrace();
 		}
@@ -155,7 +108,7 @@ public class DataConverter {
 			// airportCode
 			String airportCode = tokens[0];
 			//name
-			String name= tokens[1];
+			String name = tokens[1];
 			//Address
 			String address[] = tokens[2].split(",");
 			String street = address[0];
@@ -180,6 +133,20 @@ public class DataConverter {
 
 			// add all the airport into list of airport
 			airPortList.add(airPort);
+			XStream xstream = new XStream();
+			PrintWriter pw = null;
+			try {
+				pw = new PrintWriter(new File("data/airPort-example.xml"));
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+			pw.print("<airPorts>\n");
+			for(int i=0; i<airPortList.size(); i++){
+				xstream.alias("airPort", AirPort.class);
+				pw.print(xstream.toXML(airPortList.get(i)) + "\n");
+			}
+			pw.print("</airPorts>" + "\n");
+			pw.close();
 		}
 	}
 
@@ -191,7 +158,7 @@ public class DataConverter {
 	public static void loadFileCustomer(){
 		Scanner s= null;
 		try {
-			s = new Scanner(new File("data/Persons.dat"));
+			s = new Scanner(new File("data/Customers.dat"));
 		} catch (FileNotFoundException e){
 			e.printStackTrace();
 		}
@@ -206,8 +173,9 @@ public class DataConverter {
 			//primaryContact
 			Person primaryContact = null;
 			for(int i=0; i< peopleList.size(); i++){
-				if( peopleList.get(i).getPersonCode().equals(tokens[2]));
+				if( peopleList.get(i).getPersonCode().equals(tokens[2])){
 				primaryContact = peopleList.get(i);
+				}
 			}
 			//Name	
 			String name = tokens[3];
@@ -218,9 +186,22 @@ public class DataConverter {
 				airlineMiles= tokens[4];}
 			else { airlineMiles = null;}
 			Customer customer = new Customer(customerCode ,primaryContact, type, name,airlineMiles );
-
 			// add all the customers into list of customer
 			customerList.add(customer);
+			XStream xstream = new XStream();
+			PrintWriter pw = null;
+			try {
+				pw = new PrintWriter(new File("data/Customer-example.xml"));
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+			pw.print("<customers>\n");
+			for(int i=0; i<customerList.size(); i++){
+				xstream.alias("customer", Customer.class);
+				pw.print(xstream.toXML(customerList.get(i)) + "\n");
+			}
+			pw.print("</customers>" + "\n");
+			pw.close();
 		}
 	}
 
@@ -238,8 +219,8 @@ public class DataConverter {
 			e.printStackTrace();
 		}
 		// Create Strings to hold PersonCode, firstName, lastName...
-		AirPort depAirportCode=null;
-		AirPort arrAirportCode=null;
+		AirPort depAirportCode = null;
+		AirPort arrAirportCode = null;
 		while(s.hasNext()){
 			String line= s.nextLine();
 			String tokens[]= line.split(";");
@@ -247,7 +228,6 @@ public class DataConverter {
 			String productCode = tokens[0];
 			//type
 			String type= tokens[1];
-			System.out.println(type);
 
 			//declare all the variables
 			String seasonStartDate;
@@ -264,19 +244,15 @@ public class DataConverter {
 			if(type.equals("TS")){
 				for(int i=0; i< airPortList.size(); i++){
 					if( airPortList.get(i).getAirportCode().equals(tokens[2])){
-						//System.out.println("hello");
 
 						depAirportCode = airPortList.get(i);
 					}
 
 					else if( airPortList.get(i).getAirportCode().equals(tokens[3])){
 						arrAirportCode= airPortList.get(i);
-						//System.out.println(arrAirportCode);
 					}
 
 				}
-				System.out.println(arrAirportCode);
-
 				depTime= tokens[4];
 				arrTime=tokens[5];
 				flightNo= tokens[6];
@@ -370,72 +346,71 @@ public class DataConverter {
 
 
 		XStream xstream = new XStream();
+		xstream.alias("product", Product.class);
 		PrintWriter pw = null;
 		try {
 			pw = new PrintWriter(new File("data/Product-example.xml"));
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-		System.out.println(productList.size());
+		pw.print("<products>\n");
 		for(int i=0; i<productList.size(); i++){
-			xstream.alias("product", Product.class);
-			pw.print("<product>\n");
-			pw.print(xstream.toXML(productList.get(i)) + "\n");
-			pw.print("</product>" + "\n");
+			//pw.print(xstream.toXML(productList.get(i)) + "\n");
+		
+		//pw.print("</products>" + "\n");
 
-			/*if (productList.get(i).getType().equals("TS")){
-				xstream.alias("product", StandardTickets.class);
-				pw.print("<product>\n");
+			if (productList.get(i).getType().equals("TS")){
+				//xstream.alias("product", StandardTickets.class);
+				pw.print("<standardTicket>\n");
 				pw.print(xstream.toXML(productList.get(i)) + "\n");
-				pw.print("</product>" + "\n");
+				pw.print("</standardTicket>\n");
+
 			}
 			else if (productList.get(i).getType().equals("TO")){
-				xstream.alias("product", OffSeasonTickets.class);
-				pw.print("<product>\n");
+				//xstream.alias("product", OffSeasonTickets.class);
+				pw.print("<offSeasonTicket>\n");
 				pw.print(xstream.toXML(productList.get(i)) + "\n");
-				pw.print("</product>" + "\n");
+				pw.print("</offSeasonTicket>" + "\n");
 			}
 			else if (productList.get(i).getType().equals("TA")){
-				xstream.alias("product", AwardTickets.class);
-				pw.print("<product>\n");
+				//xstream.alias("product", AwardTickets.class);
+				pw.print("<awardTicket>\n");
 				pw.print(xstream.toXML(productList.get(i)) + "\n");
-				pw.print("</product>" + "\n");
+				pw.print("</awardTicket>" + "\n");
 			}
 			else if (productList.get(i).getType().equals("SC")){
-				xstream.alias("product", CheckedBagage.class);
-				pw.print("<product>\n");
+				//xstream.alias("product", CheckedBagage.class);
+				pw.print("<checkedbagage>\n");
 				pw.print(xstream.toXML(productList.get(i)) + "\n");
-				pw.print("</product>" + "\n");
+				pw.print("</checkedbagage>" + "\n");
 			}
 			else if (productList.get(i).getType().equals("SI")){
-				xstream.alias("product", Insurance.class);
-				pw.print("<product>\n");
+				//xstream.alias("product", Insurance.class);
+				pw.print("<insurance>\n");
 				pw.print(xstream.toXML(productList.get(i)));
-				pw.print("</product>" + "\n");
+				pw.print("</insurance>" + "\n");
 			}
 			else if (productList.get(i).getType().equals("SS")){
-				xstream.alias("product", SpecialAssistance.class);
-				pw.print("<product>\n");
+				//xstream.alias("product", SpecialAssistance.class);
+				pw.print("<special assistance>\n");
 				pw.print(xstream.toXML(productList.get(i)) + "\n");
-				pw.print("</product>" + "\n");
+				pw.print("</special assistance>" + "\n");
 			}
 			else if (productList.get(i).getType().equals("SR")){
-				xstream.alias("product", Refreshment.class);
-				pw.print("<product>\n");
+				//xstream.alias("product", Refreshment.class);
+				pw.print("<refreshment>\n");
 				pw.print(xstream.toXML(productList.get(i)) + "\n");
-				pw.print("</product>" + "\n");
-			}*/
-
+				pw.print("</refreshment>" + "\n");
+			}
 		}
+		pw.print("</products>" + "\n");
 		pw.close();
+
+		
 
 
 	}
 
 }
 
-
-}
-}
-}
 

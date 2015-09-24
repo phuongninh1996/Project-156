@@ -68,7 +68,7 @@ public class Test {
 						depAirportCode = airPortList.get(i);
 					}
 
-					else if( airPortList.get(i).getAirportCode().equals(tokens[3])){
+					if( airPortList.get(i).getAirportCode().equals(tokens[3])){
 						arrAirportCode= airPortList.get(i);
 						//System.out.println(arrAirportCode);
 					}

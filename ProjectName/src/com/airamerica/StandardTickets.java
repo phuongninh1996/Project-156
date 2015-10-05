@@ -1,7 +1,7 @@
 package com.airamerica;
 
 
-public class StandardTickets extends ProductTypes {
+public class StandardTickets extends TicketTypes {
 	private AirPort depAirportCode; 
 	private AirPort arrAirportCode;
 	private String depTime;

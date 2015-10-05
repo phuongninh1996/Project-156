@@ -24,6 +24,9 @@ import java.util.ArrayList;
 
 
 
+
+
+
 // Include imports for XML/JSON libraries if needed
 import com.thoughtworks.xstream.XStream;
 public class DataConverter {
@@ -31,7 +34,7 @@ public class DataConverter {
 	static ArrayList<Product> productList = new ArrayList<Product>();
 	static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	static ArrayList<AirPort> airPortList = new ArrayList<AirPort>();
-
+	static ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
 
 	public static void main(String args[]) {
 
@@ -174,7 +177,7 @@ public class DataConverter {
 			Person primaryContact = null;
 			for(int i=0; i< peopleList.size(); i++){
 				if( peopleList.get(i).getPersonCode().equals(tokens[2])){
-				primaryContact = peopleList.get(i);
+					primaryContact = peopleList.get(i);
 				}
 			}
 			//Name	
@@ -356,8 +359,8 @@ public class DataConverter {
 		pw.print("<products>\n");
 		for(int i=0; i<productList.size(); i++){
 			//pw.print(xstream.toXML(productList.get(i)) + "\n");
-		
-		//pw.print("</products>" + "\n");
+
+			//pw.print("</products>" + "\n");
 
 			if (productList.get(i).getType().equals("TS")){
 				//xstream.alias("product", StandardTickets.class);
@@ -405,12 +408,60 @@ public class DataConverter {
 		}
 		pw.print("</products>" + "\n");
 		pw.close();
+	}
 
-		
-
-
+	// Method to load Invoice
+	public static void loadFileInvoice(){
+		Scanner s= null;
+		try {
+			s = new Scanner(new File("data/Invoices.dat"));
+		} catch (FileNotFoundException e){
+			e.printStackTrace();
+		}
+		// Create Strings to hold PersonCode, firstName, lastName...
+		while(s.hasNext()){
+			String line= s.nextLine();
+			String tokens[]= line.split(";");
+			// invoiceCode
+			String invoiceCode = tokens[0];
+			//customerCode
+			String customerCode= tokens[1];
+			// salepersonCode
+			String salePersonCode = tokens[2];
+			//invoiceDate
+			String invoiceDate= tokens[3];
+			//Product
+			String stringProduct[] = tokens[4].split(",");
+			String ticket[]= stringProduct[0].split(":");
+			String ticketCode = ticket[0];
+			String travelDate = ticket[1];
+			int quantity= Integer.parseInt(ticket[2]);
+			for(int i = 0; i < quantity; i++){
+				String seatNumber = ticket[3+i*5];
+				String personCode = ticket[4+i*5];
+				String identityCode = ticket[5+i*5];
+				String age = ticket[6+i*5];
+				String nationality = ticket[7+i*5];
+				Passenger passenger= new Passenger(seatNumber, personCode, identityCode, age, nationality );
+				passengerList.add(passenger);
+			}
+			//checkedBaggage
+			String checkedBaggage[]=stringProduct[1].split(":");
+			String productCodeBaggage = checkedBaggage[0];
+			int quantityBagage = Integer.parseInt(checkedBaggage[1]);
+			CheckedBagage baggage = new CheckedBagage(productCodeBaggage, quantityBagage);
+			//insurance
+			String insuranceArray[]= stringProduct[2].split(":");
+			String productCodeInsurance = insuranceArray[0];
+			int quantityInsurance = Integer. parseInt(insuranceArray[1]);
+			String ticketCodeInsurance = insuranceArray[2]; 
+			Insurance insurance = new Insurance(productCodeInsurance, quantityInsurance, ticketCodeInsurance);
+					
+		}
 	}
 
 }
+
+
 
 

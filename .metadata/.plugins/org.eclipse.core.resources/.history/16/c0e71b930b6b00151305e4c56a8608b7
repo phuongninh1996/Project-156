@@ -1,0 +1,19 @@
+package com.airamerica;
+
+public class CheckedBagage extends Services {
+	private String ticketCode; 
+	private int quantity;
+	public CheckedBagage(String code, String type, String tickeCode,int quantity){
+		setProductCode(code);
+		setType(type);
+		this.ticketCode = ticketCode;
+		this.quantity= quantity; 
+		
+	}
+	public CheckedBagage(String code, String type, String tickeCode){
+		setProductCode(code);
+		setType(type);
+		this.ticketCode = ticketCode;
+		
+	}
+}

@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 // Include imports for XML/JSON libraries if needed
 import com.thoughtworks.xstream.XStream;
+
 public class Test {
 	static ArrayList<Person> peopleList = new ArrayList<Person>();
 	static ArrayList<Product> productList = new ArrayList<Product>();
@@ -160,7 +161,7 @@ public class Test {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			//System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(airPortList));
-			mapper.writerWithDefaultPrettyPrinter().writeValue(new File ("data1/Airports.json"), airPortList);
+			mapper.writerWithDefaultPrettyPrinter().writeValue(new File ("data/Airports.json"), airPortList);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
@@ -211,7 +212,7 @@ public class Test {
 			XStream xstream = new XStream();
 			PrintWriter pw = null;
 			try {
-				pw = new PrintWriter(new File("data1/Customer-example.xml"));
+				pw = new PrintWriter(new File("data/Customer-example.xml"));
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
@@ -226,7 +227,7 @@ public class Test {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			//System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(peopleList));
-			mapper.writerWithDefaultPrettyPrinter().writeValue(new File ("data1/Customers.json"), customerList);
+			mapper.writerWithDefaultPrettyPrinter().writeValue(new File ("data/Customers.json"), customerList);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
@@ -380,7 +381,7 @@ public class Test {
 			xstream.alias("product", Product.class);
 			PrintWriter pw = null;
 			try {
-				pw = new PrintWriter(new File("data1/Product-example.xml"));
+				pw = new PrintWriter(new File("data/Product-example.xml"));
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
@@ -440,7 +441,7 @@ public class Test {
 			
 			try {
 				//System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(productList));
-				mapper.writerWithDefaultPrettyPrinter().writeValue(new File ("data1/Products.json"), productList);
+				mapper.writerWithDefaultPrettyPrinter().writeValue(new File ("data/Products.json"), productList);
 			} catch (JsonGenerationException e) {
 				e.printStackTrace();
 			} catch (JsonMappingException e) {

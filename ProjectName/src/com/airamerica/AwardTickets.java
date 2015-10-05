@@ -2,7 +2,7 @@ package com.airamerica;
 
 import org.joda.time.DateTime;
 
-public class AwardTickets extends ProductTypes {
+public class AwardTickets extends TicketTypes {
 	private AirPort depAirportCode; 
 	private AirPort arrAirportCode;
 	private String depTime;

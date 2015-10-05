@@ -2,7 +2,7 @@ package com.airamerica;
 
 import org.joda.time.DateTime;
 
-public class OffSeasonTickets extends ProductTypes{
+public class OffSeasonTickets extends TicketTypes{
 	private String seasonStartDate;
 	private String seasonEndDate;
 	private AirPort depAirportCode; 

@@ -34,7 +34,7 @@ public class DataConverter {
 	static ArrayList<Product> productList = new ArrayList<Product>();
 	static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	static ArrayList<AirPort> airPortList = new ArrayList<AirPort>();
-	static ArrayList<Person> passengerList = new ArrayList<Person>();
+	static ArrayList<Passenger> passengerList = new ArrayList<Passenger>();
 
 	public static void main(String args[]) {
 
@@ -426,20 +426,8 @@ public class DataConverter {
 			String invoiceCode = tokens[0];
 			//customerCode
 			String customerCode= tokens[1];
-			Customer customer = null;
-			for(int z =0; z< peopleList.size(); z++){
-				if (customerList.get(z).getCustomerCode().equals(customerCode)){
-					customer = customerList.get(z);
-				}
-				}
 			// salepersonCode
 			String salePersonCode = tokens[2];
-			Person salePerson= null;
-			for(int z =0; z< peopleList.size(); z++){
-				if (peopleList.get(z).getPersonCode().equals(salePersonCode)){
-					salePerson= peopleList.get(z);
-					}
-				}
 			//invoiceDate
 			String invoiceDate= tokens[3];
 			//Product
@@ -454,17 +442,8 @@ public class DataConverter {
 				String identityCode = ticket[5+i*5];
 				String age = ticket[6+i*5];
 				String nationality = ticket[7+i*5];
-				for(int z =0; z< peopleList.size(); z++){
-					if (peopleList.get(z).getPersonCode().equals(personCode)){
-						Address address = peopleList.get(z).getAddress();
-						String firstName= peopleList.get(z).getFirstName();
-						String lastName= peopleList.get(z).getLastName();
-						String phoneNumber= peopleList.get(z).getPhoneNumber();
-						Person passenger= new Passenger(seatNumber, personCode, identityCode, age, nationality,address, firstName, lastName,phoneNumber );
-						passengerList.add(passenger);
-
-					}
-				}
+				Passenger passenger= new Passenger(seatNumber, personCode, identityCode, age, nationality );
+				passengerList.add(passenger);
 			}
 			//checkedBaggage
 			String checkedBaggage[]=stringProduct[1].split(":");

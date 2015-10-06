@@ -1,7 +1,7 @@
 package com.airamerica;
 
 
-public class StandardTickets extends TicketTypes {
+public class StandardTickets extends Ticket {
 	private AirPort depAirportCode; 
 	private AirPort arrAirportCode;
 	private String depTime;
@@ -11,6 +11,7 @@ public class StandardTickets extends TicketTypes {
 	private String aircraftType;
 	
 	public StandardTickets(String code, String type, AirPort depAirportCode, AirPort arrAirportCode,String depTime,String arrTime,String flightNo,String flightClass,String aircraftType){
+	// add super class
 	setProductCode(code);
 	setType(type);
 	this.depAirportCode = depAirportCode;

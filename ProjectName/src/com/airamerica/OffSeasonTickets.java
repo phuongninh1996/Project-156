@@ -2,7 +2,7 @@ package com.airamerica;
 
 import org.joda.time.DateTime;
 
-public class OffSeasonTickets extends TicketTypes{
+public class OffSeasonTickets extends Ticket{
 	private String seasonStartDate;
 	private String seasonEndDate;
 	private AirPort depAirportCode; 
@@ -15,6 +15,7 @@ public class OffSeasonTickets extends TicketTypes{
 	private String rebate; 
 	
 	public OffSeasonTickets(String code, String type, String seasonStartDate, String seasonEndDate, AirPort depAirportCode, AirPort arrAirportCode, String depTime,
+	// Add super class
 	String arrTime,
 	String flightNo,
 	String flightClass,

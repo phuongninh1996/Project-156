@@ -1,6 +1,6 @@
 package com.airamerica;
 
-public class Ticket extends Product {
+public class Ticket {
 	private String travelDate;
 	private String flightClass;
 	private AirPort departureCity;

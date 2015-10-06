@@ -6,7 +6,7 @@ String personCode;
 String identityNumber;
 String age;
 String nationality;
-public Passenger(String seatNumber, String personCode, String identityNumber, String age, String nationality,Address address,String firstName, String lastName,String phoneNumber ){
+public Passenger(String seatNumber, String personCode, String identityNumber, String age, String nationality,String firstName, String lastName,Address address,String phoneNumber ){
 	super(personCode, address, firstName, lastName, phoneNumber);
 	super.setFirstName(firstName);
 	super.setLastName(lastName);

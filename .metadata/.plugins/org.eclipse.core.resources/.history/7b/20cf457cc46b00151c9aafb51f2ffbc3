@@ -1,8 +1,6 @@
 package com.airamerica;
 
-import com.airamerica.utils.Haversine;
-
-public abstract class  Ticket extends Product {
+public class Ticket extends Product {
 	private String travelDate;
 	private String flightClass;
 	private AirPort departureCity;
@@ -30,21 +28,28 @@ public abstract class  Ticket extends Product {
 		this.ticketNote= ticketNote;
 		
 	} 
-	public abstract void airPortsDistance();
-	public abstract void baseFair();
+	public void airPortsDistance(){
 		
-	
-	public abstract void taxRate();
+	}
+	public void baseFair(){
 		
-	
-	public abstract void segmentTax();
+	}
+	public void taxRate(){
 		
-	public abstract void securityFee();
+	}
+	public void segmentTax(){
 		
-	public abstract void passengerFacilityFee();
+	}
+	public void securityFee(){
 		
-	public  abstract void totalTax();
+	}
+	public void passengerFacilityFee(){
 		
-	public abstract void  printTax();
-	
+	}
+	public void totalTax(){
+		
+	}
+	public void printTax(){
+		System.out.println();
+	}
 }

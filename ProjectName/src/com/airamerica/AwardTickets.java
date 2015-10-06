@@ -10,10 +10,45 @@ public class AwardTickets extends Ticket{
 	private String flightNo;
 	private String flightClass;
 	private String aircraftType;
-	private String pointsPerMile;
+	private String pointsPerMile;	
+	// Overwrite super class method
+	public  void airPortsDistance(){
+		
+	}
+	public  void baseFair(){
+		
+	}
+		
+	
+	public  void taxRate(){
+		
+	}
+		
+	
+	public  void segmentTax(){
+		
+	}
+		
+	public  void securityFee(){
+		
+	}
+		
+	public  void passengerFacilityFee(){
+		
+	}
+		
+	public   void totalTax(){
+		
+	}
+		
+	public  void  printTax(){
+		
+	}
+	
+	
 
 
-
+// Get and set
 	public AirPort getDepAirportCode() {
 		return depAirportCode;
 	}
@@ -80,6 +115,9 @@ public class AwardTickets extends Ticket{
 
 	public AwardTickets(String code, String type, AirPort depAirportCode, AirPort arrAirportCode,String depTime,String arrTime,String flightNo,String flightClass,String aircraftType, String pointsPerMile){
 		// add its super class 
+		super(travelDate, flightClass, departureCity, dateTime,
+				arrivalCity, aircraftType, arrivalDateTime,listOfSeatNumber,     
+				listOfPassenger, ticketNote);
 		setProductCode(code);
 		setType(type);
 		this.depAirportCode = depAirportCode;

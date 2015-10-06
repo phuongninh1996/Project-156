@@ -1,7 +1,5 @@
 package com.airamerica;
 
-import com.airamerica.utils.Haversine;
-
 
 public class StandardTickets extends Ticket {
 	private AirPort depAirportCode; 
@@ -12,55 +10,17 @@ public class StandardTickets extends Ticket {
 	private String flightClass;
 	private String aircraftType;
 	
-	
 	public StandardTickets(String code, String type, AirPort depAirportCode, AirPort arrAirportCode,String depTime,String arrTime,String flightNo,String flightClass,String aircraftType){
-		// add super class
-		setProductCode(code);
-		setType(type);
-		this.depAirportCode = depAirportCode;
-		this.arrAirportCode = arrAirportCode; 
-		this.depTime= depTime;
-		this.arrTime = arrTime;
-		this.flightNo= flightNo;
-		this.flightClass = flightClass;
-		this.aircraftType = aircraftType;
-		
-		
-	// Overwrite super class method	
-	public  void airPortsDistance(depAirportCode,arrAirportCode){
-		Haversine distance = getMiles(depAirportCode.getLatitude(), depAirportCode.getLatitude(), arrAirportCode.getLatitude(), arrAirportCode.getLongtitude());
-	}
-	public  void baseFair(){
-		
-	}
-		
-	
-	public  void taxRate(){
-		
-	}
-		
-	
-	public  void segmentTax(){
-		
-	}
-		
-	public  void securityFee(){
-		
-	}
-		
-	public  void passengerFacilityFee(){
-		
-	}
-		
-	public   void totalTax(){
-		
-	}
-		
-	public  void  printTax(){
-		
-	}
-	
-	
+	// add super class
+	setProductCode(code);
+	setType(type);
+	this.depAirportCode = depAirportCode;
+	this.arrAirportCode = arrAirportCode; 
+	this.depTime= depTime;
+	this.arrTime = arrTime;
+	this.flightNo= flightNo;
+	this.flightClass = flightClass;
+	this.aircraftType = aircraftType;
 
 	
 }

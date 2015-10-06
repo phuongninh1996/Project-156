@@ -14,41 +14,6 @@ public class OffSeasonTickets extends Ticket{
 	private String aircraftType;
 	private String rebate; 
 	
-	// Overwrite super class method
-	public  void airPortsDistance(){
-		
-	}
-	public  void baseFair(){
-		
-	}
-		
-	
-	public  void taxRate(){
-		
-	}
-		
-	
-	public  void segmentTax(){
-		
-	}
-		
-	public  void securityFee(){
-		
-	}
-		
-	public  void passengerFacilityFee(){
-		
-	}
-		
-	public   void totalTax(){
-		
-	}
-		
-	public  void  printTax(){
-		
-	}
-	
-	//Constructor
 	public OffSeasonTickets(String code, String type, String seasonStartDate, String seasonEndDate, AirPort depAirportCode, AirPort arrAirportCode, String depTime,
 	// Add super class
 	String arrTime,
@@ -72,7 +37,7 @@ public class OffSeasonTickets extends Ticket{
 		
 	}
 
-//Get and Set
+
 	public AirPort getDepAirportCode() {
 		return depAirportCode;
 	}
